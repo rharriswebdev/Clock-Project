@@ -9,29 +9,39 @@
     <title>Clock Project</title>
 </head>
 <body>
+    <div class="local-time-container">
     <div class="clock-container">
         <div class="clock">
             <div class="hand hour" data-hour-hand></div>
             <div class="hand minute" data-minute-hand></div>
             <div class="hand second" data-second-hand></div>
-            <div class="number number1">1</div>
-            <div class="number number2">2</div>
-            <div class="number number3">3</div>
-            <div class="number number4">4</div>
-            <div class="number number5">5</div>
-            <div class="number number6">6</div>
-            <div class="number number7">7</div>
-            <div class="number number8">8</div>
-            <div class="number number9">9</div>
-            <div class="number number10">10</div>
-            <div class="number number11">11</div>
-            <div class="number number12">12</div>
+            <div class="face-number">
+                <p class="twelve" id="">12</p>
+                <p class="three" id="">3</p>
+                <p class="six" id="">6</p>
+                <p class="nine" id="">9</p>
+            </div>
+           
+            <div class="number number1">|</div>
+            <div class="number number2">|</div>
+            <div class="number number3"></div>
+            <div class="number number4">|</div>
+            <div class="number number5">|</div>
+            <div class="number number6"></div>
+            <div class="number number7">|</div>
+            <div class="number number8">|</div>
+            <div class="number number9"></div>
+            <div class="number number10">|</div>
+            <div class="number number11">|</div>
+            <div class="number number12"></div>
         </div>   
     </div>
-    <div class="label">
-        <h1>Current Time</h1>
-    </div>
     
+   <div class="local">
+    <div id="digital"></div>
+    <h1>Local Time</h1>
+   </div> 
+   </div>
    
 </body>
 </html>

@@ -1,16 +1,20 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
 *, *::after, *::before {
     box-sizing: border-box;
 }
 
-* {
+/* {
     border: 1px solid red;
-} 
+} */ 
 
 body {
     background-color: #2c2c2c;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr ;
+    
     gap: 0;
     align-items: center;
     justify-items: center;
@@ -18,15 +22,30 @@ body {
     overflow-y: hidden;
 }
 
+.local-time-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: clamp(20rem, 90vw, 70rem);
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 6rem 0;
+    background-color: #202020;
+    border-radius: 6px;
+
+}
+
 .clock {
+    display: flex;
+    justify-content: center;
     position: relative;
     width: 300px;
     height: 300px;
     background-color: #fff;
     border-radius: 50%;
     border: 10px solid #000;
-    margin: 40px 0 0 0;
-
+    
+    
 }
 
 .clock::after {
@@ -39,7 +58,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 50%;
-    background-color: #000;
+    border: 6px solid #000;
+    
 }
 
 .clock .number {
@@ -51,7 +71,59 @@ body {
     font-size: 1.5em;
     font-family: Arial, Helvetica, sans-serif;
     transform: rotate(var(--rotation));
+    /*display: none; */
 }
+
+.face-number {
+    display: grid;
+    grid-template-areas: ". twelve ."
+                         "nine . three"
+                         ". six .";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    place-self: center;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: Arial, Helvetica, sans-serif;
+    transform: rotate(var(--rotation));
+    
+}
+
+.face-number p {
+    width: fit-content;
+    height: fit-content;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0 2px;
+}
+
+.twelve{
+    grid-area: twelve;
+    justify-self: center;
+    align-self: start;
+    margin-top: 0;
+}
+
+.three{
+    grid-area: three;
+    justify-self: end;
+    align-self: center;
+}
+
+.six{
+    grid-area: six;
+    justify-self: center;
+    align-self: end;
+    margin-bottom: 0;
+}
+
+.nine{
+    grid-area: nine;
+    justify-self: start;
+    align-self: center;
+}
+
+
 
 .clock .number1 { --rotation: 30deg; }
 .clock .number2 { --rotation: 60deg; }
@@ -81,9 +153,9 @@ body {
 }
 
 .clock .hand.second {
-    width: 3px;
+    width: 4px;
     height: 45%;
-    background-color: red;
+    background-color: #ff9e35;
 }
 
 .clock .hand.minute {
@@ -93,19 +165,25 @@ body {
 }
 
 .clock .hand.hour {
-    width: 10px;
+    width: 8px;
     height: 30%;
     background-color: #000;
+   
 }
 
-.label {
-    font-family: Helvetica, sans-serif;
+
+
+.local {
     color: #fff;
-    font-size: 2em;
-    margin: 0;
+    margin-top: 2em;
+    font-family: 'Roboto', sans-serif;
 }
 
-.label h1 {
-    margin: 0;
+.local h1 {
+    font-size: 1.25em;
+    margin: 5px;
 }
 
+#digital {
+    font-size: 4em;
+}
